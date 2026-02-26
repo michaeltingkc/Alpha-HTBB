@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -2158,6 +2159,74 @@
 
    // Wait for DOM to be fully loaded before initializing
    document.addEventListener('DOMContentLoaded', initializeApp);
+   // Function to show form status message
+function showFormStatus(type, message) {
+    const statusElement = document.getElementById('formStatus');
+    statusElement.textContent = message;
+    statusElement.className = 'form-status ' + type;
+    statusElement.style.display = 'block';
+    
+    // Hide the message after 5 seconds
+    setTimeout(() => {
+        statusElement.style.display = 'none';
+    }, 5000);
+}
+
+// Form submission handler with Google Sheets integration
+document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Get form data
+    const formData = {
+        name: document.getElementById('name').value,
+        role: document.getElementById('role').value,
+        category: document.getElementById('category').value,
+        weekNumber: document.getElementById('weekNumber').value,
+        idea: document.getElementById('idea').value,
+        timestamp: new Date().toISOString()
+    };
+    
+    // Show loading state
+    const submitBtn = document.getElementById('submitBtn');
+    const originalBtnText = submitBtn.innerHTML;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Submitting...';
+    submitBtn.disabled = true;
+    
+    // Check if Google Script URL is configured
+    // Note: We check against a placeholder just in case it wasn't updated, 
+    // but your current code has the URL filled in.
+    if (GOOGLE_SCRIPT_URL === 'https://script.google.com/macros/s/YOUR_SCRIPT_ID_HERE/exec') {
+        showFormStatus('error', 'Google Sheets integration is not configured. Please set up your Google Apps Script and update the GOOGLE_SCRIPT_URL variable.');
+        submitBtn.innerHTML = originalBtnText;
+        submitBtn.disabled = false;
+        return;
+    }
+    
+    // Send data to Google Sheets via Google Apps Script
+    fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors', // Required for Google Apps Script
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+    })
+    .then(response => {
+        // Since we're using no-cors mode, we won't get a proper response
+        // We'll assume it was successful if no error was thrown
+        showFormStatus('success', 'Thank you for sharing! Your ideas will help others create welcoming spaces where faith can grow.');
+        this.reset();
+    })
+    .catch(error => {
+        console.error('Error submitting form:', error);
+        showFormStatus('error', 'There was an error submitting your form. Please try again later.');
+    })
+    .finally(() => {
+        // Restore button state
+        submitBtn.innerHTML = originalBtnText;
+        submitBtn.disabled = false;
+    });
+});
 </script>
    </body>
 </html>
