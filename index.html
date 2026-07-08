@@ -1425,17 +1425,6 @@
          let weeklyResources = [];
          let weekendResources = {};
          let additionalGuides = [];
-         const weekSelect = document.getElementById('weekNumber');
-data.weeklyResources.forEach(w => {
-   const opt = document.createElement('option');
-   opt.value = w.week;
-   opt.textContent = 'Week ' + w.week + ': ' + w.title;
-   weekSelect.appendChild(opt);
-});
-const weekendOpt = document.createElement('option');
-weekendOpt.value = 'weekend';
-weekendOpt.textContent = 'Weekend Away';
-weekSelect.appendChild(weekendOpt);
          // ============================================
          // 🚫 STOP EDITING HERE - LOGIC BELOW 🚫
          // ============================================
@@ -1529,10 +1518,23 @@ weekSelect.appendChild(weekendOpt);
                  const data = await response.json();
                  
                  // Assign fetched data to global variables
-                 trainingVideos = data.trainingVideos || [];
-                 weeklyResources = data.weeklyResources || [];
-                 weekendResources = data.weekendResources || {};
-                 additionalGuides = data.additionalGuides || [];
+                 trainingVideos = data.trainingVideos;
+weeklyResources = data.weeklyResources;
+weekendResources = data.weekendResources;
+additionalGuides = data.additionalGuides;
+
+// Populate week dropdown
+const weekSelect = document.getElementById('weekNumber');
+data.weeklyResources.forEach(w => {
+   const opt = document.createElement('option');
+   opt.value = w.week;
+   opt.textContent = 'Week ' + w.week + ': ' + w.title;
+   weekSelect.appendChild(opt);
+});
+const weekendOpt = document.createElement('option');
+weekendOpt.value = 'weekend';
+weekendOpt.textContent = 'Weekend Away';
+weekSelect.appendChild(weekendOpt);
                  
              } catch (error) {
                  console.error("Could not load data.json:", error);
