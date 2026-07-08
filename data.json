@@ -391,50 +391,6 @@
     },
     {
       "week": 9,
-      "title": "Why and How Should I Tell Others?",
-      "talk": {
-        "title": "Why and How Should I Tell Others?",
-        "url": "https://player.vimeo.com/video/184825498"
-      },
-      "briefing": {
-        "title": "Host & Helper: Week 9",
-        "url": "https://player.vimeo.com/video/340385769"
-      },
-      "guide": {
-        "title": "Guest Guide",
-        "url": "https://drive.google.com/file/d/1kTNr7UaThJlzqxeAMjxqjuBivOplQhex/view"
-      },
-      "teamGuide": {
-        "title": "Team Guide",
-        "url": "https://drive.google.com/file/d/173-z4FifopthDqizeUc0bGp9ccIRY6pH/view?usp=drive_link"
-      },
-      "icebreaker": {
-        "title": "Icebreaker",
-        "content": [
-          "Share about something you're passionate about that others might not know about.",
-          "What makes it so meaningful to you?",
-          "How do you share it with others?"
-        ]
-      },
-      "discussion": {
-        "title": "Discussion Questions",
-        "content": [
-          "What made you decide to do Alpha?",
-          "If you could ask God a question, what would you ask?",
-          "Bonus question: Before you heard the talk tonight, what was your concept of Jesus? Has it changed? If so, why?"
-        ]
-      },
-      "tips": {
-        "title": "Tips",
-        "content": [
-          "Arrive early. Make guests feel welcomed and cared for.",
-          "Avoid discussing religion over dinner. There's plenty of time for that in the weeks ahead.",
-          "Finish on time."
-        ]
-      }
-    },
-    {
-      "week": 10,
       "title": "Does God Heal Today?",
       "talk": {
         "title": "Does God Heal Today?",
@@ -478,7 +434,7 @@
       }
     },
     {
-      "week": 11,
+      "week": 10,
       "title": "What About The Church?",
       "talk": {
         "title": "What About The Church?",
