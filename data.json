@@ -407,7 +407,7 @@
         "title": "Team Guide",
         "url": "https://drive.google.com/file/d/14jv2vwoBnbmpTm_uwfFzeGSIwSv0XnOT/view?usp=drive_link"
       },
-      "icebreaker": {
+            "icebreaker": {
         "title": "Icebreaker",
         "content": [
           "Have you or someone you know experienced an unexpected recovery from illness or injury?",
@@ -415,18 +415,15 @@
           "What role did faith play in the healing process?"
         ]
       },
-{
-  "discussion": {
-    "title": "Discussion Questions",
-    "content": [
-      "During prayer meeting, we will come together to pray and ask God for Words of Knowledge about healing for the guests that are coming tonight.",
-      "In your small group, start with the question “Does anyone think that the word shared was for them?” Ask the person’s permission to pray for them “Do you mind if we pray for you?”.",
-      "Encourage guests to pray for each other.",
-      "Lastly, ask \"Is there anything that we can pray for you today?\" and the goal is to pray for everybody."
-    ]
-  }
-}
-
+      "discussion": {
+        "title": "Discussion Questions",
+        "content": [
+          "During prayer meeting, we will come together to pray and ask God for Words of Knowledge about healing for the guests that are coming tonight.",
+          "In your small group, start with the question “Does anyone think that the word shared was for them?” Ask the person’s permission to pray for them “Do you mind if we pray for you?”.",
+          "Encourage guests to pray for each other.",
+          "Lastly, ask \"Is there anything that we can pray for you today?\" and the goal is to pray for everybody."
+        ]
+      },
       "tips": {
         "title": "Tips",
         "content": [
